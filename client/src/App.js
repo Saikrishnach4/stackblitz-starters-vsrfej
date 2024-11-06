@@ -13,7 +13,7 @@ function App() {
     if (!query) return;
 
     setLoading(true);
-    setError(""); // Reset error on each search
+    setError("");
     try {
       const response = await axios.get(
         `https://openlibrary.org/search.json?title=${query}`
@@ -30,7 +30,7 @@ function App() {
     <div className="App">
       <h1>Book Finder</h1>
 
-      {/* Search Bar */}
+     
       <div className="search-bar">
         <form onSubmit={handleSearch}>
           <input
@@ -43,10 +43,9 @@ function App() {
         </form>
       </div>
 
-      {/* Error Message */}
+     
       {error && <p className="error">{error}</p>}
 
-      {/* Loading Spinner */}
       {loading ? (
         <p>Loading...</p>
       ) : (
